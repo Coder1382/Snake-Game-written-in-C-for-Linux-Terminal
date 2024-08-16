@@ -1,21 +1,21 @@
 #.PHONY: all clean dist dvi install uninstall
-RUN = gcc -Wall -Werror -Wextra -O2 -std=c11 --pedantic
+RUN = g++ -Wall -Werror -Wextra -O2 --pedantic -std=c++17 -g
 ifeq ($(shell uname),Linux)
-	OS = -lcheck -lm -lrt -lpthread -lsubunit -lncursesw -lgcov
+	OS = -lgtest -lm -lrt -lpthread -lsubunit -lncursesw -lgcov -lgmock
 else
-	OS = -lcheck -lm -lpthread -lncursesw -lgcov
+	OS = -lgtest -lm -lpthread -lncursesw -lgcov -lgmock
 endif
 all:	clean snake.a test gcov_report
 s21_snake.a:	snake.o
 	ar rcs snake.a *.o
 	ranlib snake.a
-s21_snake.o:	snake/*.c gui/cli/*.c *.h
-	$(RUN) *.c *.c -c
+s21_snake.o:	*.cpp *.hpp
+	$(RUN) *.cpp -c
 clean:
 	rm -rf testresult *.gcda *.gcno *.o *.info *.a tests/*.gcno *.tar.gz tests/report test.dSYM docs/html docs/latex report
-s21_snake_install.o:	*.c *.h
+s21_snake_install.o:	*.cpp *.hpp
 snake:	s21_snake_install.o
-	$(RUN) *.c -o snake $(OS)
+	$(RUN) *.cpp -o snake $(OS)
 install:	snake
 	mkdir snake_game
 	install snake snake_game
