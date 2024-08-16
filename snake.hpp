@@ -1,5 +1,5 @@
-#ifndef S21_SNAKE_H
-#define S21_SNAKE_H
+#ifndef SNAKE_H
+#define SNAKE_H
 #include <fcntl.h>
 #include <gtest/gtest.h>
 #include <locale.h>
@@ -8,9 +8,7 @@
 #include <uchar.h>
 #include <unistd.h>
 #include <wchar.h>
-
 #include <iostream>
-namespace s21 {
 class Play {
  private:
   struct Snake {
@@ -69,5 +67,4 @@ class GameInfo_t {
         info = newwin(11, 25, 0, 39), menu = newwin(9, 25, 12, 39);
   }
 };
-}  // namespace s21
 #endif
