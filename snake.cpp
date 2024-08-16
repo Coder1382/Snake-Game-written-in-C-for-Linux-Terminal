@@ -1,5 +1,4 @@
-#include "s21_snake.hpp"
-using namespace s21;
+#include "snake.hpp"
 int main() {
   GameInfo_t game;
   game.userInput('\0');
