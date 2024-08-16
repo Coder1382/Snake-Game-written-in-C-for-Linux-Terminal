@@ -1,5 +1,4 @@
-#include "../../brick_game/snake/s21_snake.hpp"
-using namespace s21;
+#include "snake.hpp"
 void GameInfo_t ::updateCurrentState() {
   wrefresh(field), wrefresh(info), wrefresh(menu);
   curs_set(0);
