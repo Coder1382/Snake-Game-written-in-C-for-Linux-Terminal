@@ -1,5 +1,4 @@
-#include "s21_snake.hpp"
-using namespace s21;
+#include "snake.hpp"
 void GameInfo_t ::starting() {
   for (int i = 0; i < 200;
        data.snake[i].n = data.snake[i].x = data.snake[i].y = 0, i += 1) {
