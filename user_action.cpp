@@ -1,5 +1,4 @@
-#include "s21_snake.hpp"
-using namespace s21;
+#include "snake.hpp"
 void GameInfo_t ::userInput(int x) {
   updateCurrentState();
   key = x;
