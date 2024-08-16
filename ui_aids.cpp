@@ -1,5 +1,4 @@
-#include "../../brick_game/snake/s21_snake.hpp"
-using namespace s21;
+#include "snake.hpp"
 void GameInfo_t ::initialField() {
   wattron(info, COLOR_PAIR(10)), wattron(menu, COLOR_PAIR(10)),
       mvwprintw(info, 2, 1, "Score %d     ", data.score),
